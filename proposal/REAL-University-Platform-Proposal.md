@@ -1,10 +1,10 @@
-# REAL University Digital Platform
+# RIAB Digital Platform
 
 ## Technical Concept, Resources, Cost Estimate & Delivery Timeline
 
 ---
 
-**Prepared for:** Seth Oketch — Vision Holder, REAL University
+**Prepared for:** Seth Oketch — Vision Holder, RIAB
 **Date:** February 2026
 **Version:** 2.1
 **Scope:** Minimum Viable Product (MVP) — Core Recovery Workflow
@@ -28,14 +28,14 @@
 
 After 24 years of refinement, the RIAB framework is proven. The next critical objective is **scale**.
 
-This proposal outlines the approach to digitize Recovery In A Box (RIAB) into a secure, mobile-first digital platform under the REAL University umbrella. The MVP focuses on the **core recovery workflow** — getting clients into the system, tracking their daily progress, and giving coaches and admins real-time visibility into outcomes.
+This proposal outlines the approach to digitize Recovery In A Box (RIAB) into a secure, mobile-first digital platform under the RIAB umbrella. The MVP focuses on the **core recovery workflow** — getting clients into the system, tracking their daily progress, and giving coaches and admins real-time visibility into outcomes.
 
 ### What the MVP Delivers
 
 ```mermaid
 %%{init: {'theme': 'base', 'themeVariables': { 'primaryColor': '#2E7D32', 'primaryTextColor': '#fff', 'lineColor': '#F9A825'}}}%%
 graph TB
-    subgraph PLATFORM["REAL University MVP"]
+    subgraph PLATFORM["RIAB MVP"]
         direction LR
         M1["Coach & Institution<br/>Management<br/>──────────<br/>Profiles, certification<br/>tracking, directory"]
         M2["Client<br/>Management<br/>──────────<br/>Intake, assignment,<br/>daily check-ins,<br/>alert detection"]
@@ -63,9 +63,9 @@ graph TB
 
 | | |
 | --- | --- |
-| **Investment** | KSh 2,000,000 |
+| **Investment** | KSh 1,250,000 |
 | **Delivery** | 4 months |
-| **Team** | 5 people (+ part-time designer) |
+| **Team** | 3 people (2 full-time + part-time designer) |
 | **Pilot Target** | 30-50 clients, 3-5 coaches, 1-2 institutions |
 | **Technology** | Python/FastAPI + Next.js/React + PostgreSQL |
 
@@ -214,15 +214,12 @@ flowchart LR
 ```mermaid
 %%{init: {'theme': 'base', 'themeVariables': { 'primaryColor': '#2E7D32', 'primaryTextColor': '#fff', 'lineColor': '#F9A825'}}}%%
 graph TB
-    LIAISON["Client Liaison / QA<br/>(2 people)<br/>────────────────<br/>Client communication<br/>Requirements & QA<br/>Pilot coordination"]
+    BE["Backend Lead &<br/>System Architect<br/>────────────────<br/>API development<br/>Database & infra<br/>Security"]
 
-    LIAISON --> BE["Backend Lead &<br/>System Architect<br/>────────────────<br/>API development<br/>Database & infra<br/>Security"]
-
-    LIAISON --> UX["UI/UX Designer<br/>(Part-Time)<br/>────────────────<br/>Wireframes<br/>Design system<br/>Mobile-first UX"]
+    BE --> UX["UI/UX Designer<br/>(Part-Time)<br/>────────────────<br/>Wireframes<br/>Design system<br/>Mobile-first UX"]
 
     BE --> FE["Frontend Developer<br/>────────────────<br/>Next.js / React<br/>Tailwind CSS<br/>All screens + check-in UI"]
 
-    style LIAISON fill:#1B5E20,stroke:#0D3B0E,color:#fff
     style BE fill:#2E7D32,stroke:#1B5E20,color:#fff
     style UX fill:#F9A825,stroke:#F57F17,color:#1A1A1A
     style FE fill:#F9A825,stroke:#F57F17,color:#1A1A1A
@@ -230,7 +227,6 @@ graph TB
 
 | Role | Duration |
 | --- | --- |
-| Client Liaison / QA (2 people) | 4 months |
 | Backend Lead / System Architect | 4 months |
 | Frontend Developer | 4 months |
 | UI/UX Designer (part-time contract) | 3 months |
@@ -242,10 +238,11 @@ graph TB
 | VPS (4GB RAM, 2 vCPU, Docker) | DigitalOcean | $48 |
 | S3-compatible file storage | DigitalOcean Spaces | $15 |
 | CDN + SSL + DDoS protection | Cloudflare (free tier) | $0 |
-| Transactional email | AWS SES (free tier) | $0 |
-| **Monthly total** | | **~$63** |
+| Transactional email (SMTP) | Brevo Starter | $9 |
+| Business email | Google Workspace Business Starter (2 users) | $14 |
+| **Monthly total** | | **~$86** |
 
-### 3.3 Content from REAL University
+### 3.3 Content from RIAB
 
 The following must be provided to populate the platform:
 
@@ -262,48 +259,45 @@ The following must be provided to populate the platform:
 
 ## 4. Cost Estimate
 
-> All figures in Kenyan Shillings (KSh).
 
 ### 4.1 Investment Summary
 
 ```mermaid
 %%{init: {'theme': 'base', 'themeVariables': { 'primaryColor': '#2E7D32', 'primaryTextColor': '#fff', 'lineColor': '#F9A825'}}}%%
-pie title MVP Investment — KSh 2,000,000
-    "Backend Lead / Architect (30%)" : 600000
-    "Frontend Developer (24%)" : 480000
-    "Client Liaison / QA (20%)" : 400000
-    "UI/UX Designer (9%)" : 180000
-    "Infrastructure & Tools (3%)" : 65000
-    "Contingency (14%)" : 275000
+pie title MVP Investment — KSh 1,250,000
+    "Backend Lead / Architect (44.8%)" : 560000
+    "Frontend Developer (35.2%)" : 440000
+    "UI/UX Designer (14.4%)" : 180000
+    "Infrastructure & Tools (5.6%)" : 70000
 ```
 
 | Category | Amount (KSh) |
 | --- | --- |
-| Backend Lead / System Architect | 600,000 |
-| Frontend Developer | 480,000 |
-| Client Liaison / QA (2 people) | 400,000 |
+| Backend Lead / System Architect | 560,000 |
+| Frontend Developer | 440,000 |
 | UI/UX Designer (part-time) | 180,000 |
-| Infrastructure (4 months @ ~KSh 8,200/mo) | 50,000 |
-| Tools & Services (Figma, domain) | 15,000 |
-| Contingency (14%) | 275,000 |
-| **Total** | **2,000,000** |
+| Infrastructure (4 months @ ~KSh 9,360/mo) | 50,000 |
+| Tools & Services (Figma, business email) | 20,000 |
+| **Total** | **1,250,000** |
 
 ### 4.2 Payment Structure
 
 | Milestone | Trigger | Amount (KSh) |
 | --- | --- | --- |
-| **Kickoff** | Contract signed, development begins | 600,000 (30%) |
-| **Month 2 Checkpoint** | Core workflows functional on staging | 600,000 (30%) |
-| **MVP Delivery** | Platform live, pilot group onboarded | 800,000 (40%) |
-| **Total** | | **2,000,000** |
+| **Kickoff** | Contract signed, development begins | 375,000 (30%) |
+| **Month 2 Checkpoint** | Core workflows functional on staging | 375,000 (30%) |
+| **MVP Delivery** | Platform live, pilot group onboarded | 500,000 (40%) |
+| **Total** | | **1,250,000** |
 
 ### 4.3 Post-Launch Operating Costs
 
 | Category | Monthly (USD) | Monthly (KSh) |
 | --- | --- | --- |
 | VPS + Storage | ~$63 | ~8,200 |
-| Email + CDN | $0 (free tiers) | 0 |
-| **Total** | **~$63** | **~8,200** |
+| Transactional email (Brevo SMTP) | $9 | ~1,170 |
+| Business email (Google Workspace, 2 users) | $14 | ~1,820 |
+| CDN / DDoS | $0 (free tier) | 0 |
+| **Total** | **~$86** | **~11,180** |
 
 > The platform runs at minimal cost post-launch. Future enhancements scoped and budgeted separately based on pilot feedback.
 
@@ -330,7 +324,7 @@ pie title MVP Investment — KSh 2,000,000
 | Backend | Auth system (JWT + RBAC); user CRUD; database schema; staging deployed |
 | Frontend | Login / registration; dashboard shells (4 roles); responsive layout; component library |
 | Design | Design system (RIAB brand); wireframes for Months 1-2; hi-fi auth mockups |
-| QA / Liaison | Content inventory started; test plan drafted; feedback loop established |
+| QA (Team-led) | Content inventory started; test plan drafted; feedback loop established |
 
 **Month 2 — Core Workflows**
 
@@ -339,7 +333,7 @@ pie title MVP Investment — KSh 2,000,000
 | Backend | Client intake API; assignment workflow; daily check-in API; alert engine |
 | Frontend | Intake form (mobile); check-in UI (<30s submit); coach client list; admin dashboard |
 | Design | Content library UI; check-in refinement; mobile testing |
-| QA / Liaison | Core workflow testing; staging demo to client; feedback collected |
+| QA (Team-led) | Core workflow testing; staging demo to client; feedback collected |
 
 **Month 3 — Content & Dashboards**
 
@@ -348,7 +342,7 @@ pie title MVP Investment — KSh 2,000,000
 | Backend | Content library API; dashboard data APIs; email notification service |
 | Frontend | Content library (admin); content viewer (client); dashboard charts; notifications |
 | Content | Initial RIAB materials uploaded and categorized |
-| QA / Liaison | Full workflow testing; security review; pilot users identified |
+| QA (Team-led) | Full workflow testing; security review; pilot users identified |
 
 **Month 4 — Polish & Launch**
 
@@ -366,7 +360,7 @@ pie title MVP Investment — KSh 2,000,000
 | M1 | Kickoff complete | Week 1 | Scope locked, environment ready, wireframes approved |
 | M2 | Auth + dashboards on staging | Week 4 | Login works, 4 dashboards render |
 | M3 | Core workflows on staging | Week 8 | Intake → assignment → check-in works end-to-end |
-| M4 | First client demo | Week 8 | REAL University sees working staging demo |
+| M4 | First client demo | Week 8 | RIAB sees working staging demo |
 | M5 | Content library live | Week 12 | Materials uploaded, assignable, viewable |
 | M6 | UAT begins | Week 14 | Pilot coaches testing real workflows |
 | **M7** | **MVP Pilot Launch** | **Week 16** | **30-50 clients actively using the platform** |
@@ -377,7 +371,7 @@ pie title MVP Investment — KSh 2,000,000
 
 | Risk | Likelihood | Impact | Mitigation |
 | --- | --- | --- | --- |
-| **Content not provided on time** | Medium | High | Content audit in kickoff; liaison team drives weekly collection |
+| **Content not provided on time** | Medium | High | Content audit in kickoff; Project Lead drives weekly collection |
 | **Scope creep** | High | High | Scope locked after kickoff; formal change request process |
 | **Low pilot adoption** | Low | High | Involve pilot coaches in UX testing from Month 2; simplify onboarding |
 | **Frontend hiring delay** | Medium | Medium | Begin recruiting before contract signing; backup candidates ready |
@@ -410,7 +404,7 @@ The MVP establishes the core recovery workflow. The architecture is designed wit
 | --- | --- | --- |
 | 1 | Confirm alignment with this technical approach | Seth Oketch |
 | 2 | Identify pilot partners (1-2 institutions, 3-5 coaches) | Seth Oketch |
-| 3 | Provide core content (intake form structure, recovery phases, initial materials) | REAL University |
+| 3 | Provide core content (intake form structure, recovery phases, initial materials) | RIAB |
 | 4 | Approve budget and payment structure | Seth Oketch |
 | 5 | Schedule kickoff week | Both parties |
 
